@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfiniPC - اختر مكوناتك</title>
+    <link rel="stylesheet" href="builder.css">
+    <div class="builder-nav">
+    <h2>🔗 اختر المكونات:</h2>
+    <a href="cpu.html" class="btn">اختيار المعالج (CPU)</a>
+    <a href="gpu.html" class="btn">اختيار كارت الشاشة (GPU)</a>
+    <a href="ram.html" class="btn">اختيار الرام (RAM)</a>
+    <a href="storage.html" class="btn">اختيار التخزين (Storage)</a>
+    <a href="case.html" class="btn">اختيار الكيس (Case)</a>
+    <a href="psu.html" class="btn">اختيار الباور سبلاي (PSU)</a>
+</div>
+
+</head>
+<body>
+    <header>
+        <h1>🔧 Infini<span>PC</span> - اختيار المكونات</h1>
+    </header>
+
+    <section class="builder">
+        <form id="pc-form">
+            <div class="component">
+                <label>المعالج (CPU)</label>
+                <select id="cpu">
+                    <option data-price="200" data-watt="65">Ryzen 5 5600X - 200$ - 65W</option>
+                    <option data-price="350" data-watt="125">Intel i7 13700K - 350$ - 125W</option>
+                </select>
+            </div>
+
+            <div class="component">
+                <label>كارت الشاشة (GPU)</label>
+                <select id="gpu">
+                    <option data-price="400" data-watt="170">RTX 4060 Ti - 400$ - 170W</option>
+                    <option data-price="900" data-watt="320">RTX 4080 - 900$ - 320W</option>
+                </select>
+            </div>
+
+            <div class="component">
+                <label>الرام (RAM)</label>
+                <select id="ram">
+                    <option data-price="80" data-watt="5">16GB DDR4 - 80$ - 5W</option>
+                    <option data-price="140" data-watt="5">32GB DDR5 - 140$ - 5W</option>
+                </select>
+            </div>
+
+            <div class="component">
+                <label>التخزين (Storage)</label>
+                <select id="storage">
+                    <option data-price="70" data-watt="4">1TB SSD - 70$ - 4W</option>
+                    <option data-price="120" data-watt="6">2TB NVMe - 120$ - 6W</option>
+                </select>
+            </div>
+
+            <div class="component">
+                <label>الكيس (Case)</label>
+                <select id="case">
+                    <option data-price="50" data-watt="0">NZXT H510 - 50$</option>
+                    <option data-price="120" data-watt="0">Lian Li 011 Dynamic - 120$</option>
+                </select>
+            </div>
+
+            <div class="component">
+                <label>الباور سبلاي (PSU)</label>
+                <select id="psu">
+                    <option data-price="80" data-watt="650">650W Bronze - 80$</option>
+                    <option data-price="140" data-watt="850">850W Gold - 140$</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn" onclick="calculate()">احسب السعر والاستهلاك ⚡</button>
+            <p id="cpu-result">✔️ لم يتم اختيار معالج بعد.</p>
+<p id="gpu-result">✔️ لم يتم اختيار كارت شاشة بعد.</p>
+<p id="ram-result">✔️ لم يتم اختيار رام بعد.</p>
+<p id="storage-result">✔️ لم يتم اختيار تخزين بعد.</p>
+<p id="case-result">✔️ لم يتم اختيار كيس بعد.</p>
+<p id="psu-result">✔️ لم يتم اختيار باور سبلاي بعد.</p>
+
+        </form>
+    
+
+        <div class="result">
+            <h2>🔢 النتائج:</h2>
+            <p id="total-price">💵 السعر الإجمالي: -</p>
+            <p id="total-watt">⚡ مجموع الاستهلاك: -</p>
+            <p id="psu-advice">🔋 نصيحة للـ PSU: -</p>
+        </div>
+    </section>
+
+    <script src="builder.js"></script>
+</body>
+</html>
